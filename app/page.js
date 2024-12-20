@@ -20,7 +20,7 @@ const deleteHandler = (i)=>{
  setMainTask(copyTask)
 }
 
-let renderTask = <h2>Empty</h2>
+let renderTask = <h2 className='text-2xl font-semibold flex justify-center'>Empty</h2>
 
 if(mainTask.length>0){
   renderTask = mainTask.map((t,i)=>{
@@ -31,7 +31,7 @@ if(mainTask.length>0){
     <h6 className='text-xl font-semibold'>{t.desc}</h6>
   </div>
 
-  
+
   <button onClick={
     ()=>{deleteHandler(i)}
   }
@@ -43,8 +43,6 @@ if(mainTask.length>0){
 
 }
 
-
-
   return (
 
     
@@ -54,7 +52,7 @@ if(mainTask.length>0){
 
   
   
-<form onSubmit={submitHandler}>
+<form onSubmit={submitHandler} className='flex justify-center'>
   <input className='border-4 border-black rounded m-8 px-6 py-1' placeholder='Enter Task' value={task}  onChange={(e)=>{
 addTask(e.target.value)
   }}/>
